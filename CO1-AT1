@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to My Website</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Cambria,serif;
+font-size:14px;
+}
+
+body{
+background:linear-gradient(-45deg,#b3e5ff,#d6f0ff,#99ddff,#b3e5ff);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+text-align:center;
+color:blue;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+width:90%;
+margin:25px auto;
+padding:25px;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(8px);
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+animation:fadeIn 1.5s;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+font-size:34px;
+color:blue;
+text-shadow:0 0 8px white,
+0 0 15px blue;
+margin-bottom:20px;
+}
+
+.navbar{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-bottom:25px;
+flex-wrap:wrap;
+}
+
+.navbar a{
+text-decoration:none;
+background:blue;
+color:white;
+padding:10px 20px;
+border-radius:25px;
+transition:.4s;
+font-weight:bold;
+}
+
+.navbar a:hover{
+background:darkblue;
+transform:scale(1.1);
+box-shadow:0 0 12px blue;
+}
+
+.scroll-box{
+width:100%;
+overflow:hidden;
+white-space:nowrap;
+margin:25px 0;
+}
+
+.scroll-text{
+display:inline-block;
+font-size:20px;
+font-weight:bold;
+color:blue;
+animation:scroll 12s linear infinite;
+}
+
+@keyframes scroll{
+0%{
+transform:translateX(100%);
+}
+100%{
+transform:translateX(-100%);
+}
+}
+
+.info{
+display:flex;
+justify-content:center;
+gap:60px;
+margin:25px;
+flex-wrap:wrap;
+font-weight:bold;
+}
+
+.progress{
+width:70%;
+height:22px;
+background:white;
+margin:20px auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 8px gray;
+}
+
+.fill{
+height:100%;
+width:100%;
+background:linear-gradient(to right,#0066ff,#00bfff);
+animation:load 3s;
+}
+
+@keyframes load{
+from{width:0;}
+to{width:100%;}
+}
+
+.grid-container{
+display:grid;
+grid-template-columns:repeat(3,180px);
+gap:20px;
+justify-content:center;
+margin-top:35px;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:15px;
+border:2px solid blue;
+font-weight:bold;
+font-size:18px;
+transition:.4s;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.box:hover{
+background:blue;
+color:white;
+transform:translateY(-8px);
+box-shadow:0 0 20px blue;
+}
+
+button{
+margin-top:35px;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:linear-gradient(to right,#0066ff,#00aaff);
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:.4s;
+}
+
+button:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px blue;
+}
+
+footer{
+margin-top:45px;
+padding:15px;
+color:blue;
+font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.grid-container{
+grid-template-columns:repeat(2,160px);
+}
+
+.info{
+flex-direction:column;
+gap:15px;
+}
+
+}
+
+@media(max-width:500px){
+
+.grid-container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌐 Welcome to My Website</h1>
+
+<div class="navbar">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="scroll-box">
+<div class="scroll-text">
+✨ Welcome to My Website • Learn HTML • Learn CSS • Enjoy Web Development • Have a Great Day! ✨
+</div>
+</div>
+
+<div class="info">
+<div>
+📅 Date :
+<span id="date"></span>
+</div>
+
+<div>
+⏰ Time :
+<span id="clock"></span>
+</div>
+</div>
+
+<h3>Website Loading Progress</h3>
+
+<div class="progress">
+<div class="fill"></div>
+</div>
+
+<div class="grid-container">
+
+<div class="box">🏠 Home</div>
+
+<div class="box">📖 About</div>
+
+<div class="box">🖼 Gallery</div>
+
+<div class="box">🛠 Services</div>
+
+<div class="box">📞 Contact</div>
+
+<div class="box">💻 Projects</div>
+
+</div>
+
+<button>🚀 Explore More</button>
+
+<footer>
+
+<hr><br>
+
+© 2026 My Website | Designed by Swathish
+
+</footer>
+
+</div>
+
+<script>
+
+// Display Current Date
+document.getElementById("date").innerHTML =
+new Date().toDateString();
+
+// Live Digital Clock
+function updateClock() {
+    document.getElementById("clock").innerHTML =
+    new Date().toLocaleTimeString();
+}
+
+// Update every second
+setInterval(updateClock, 1000);
+
+// Display immediately when page loads
+updateClock();
+
+// Button Click Event
+document.querySelector("button").addEventListener("click", function () {
+    alert("🎉 Thank you for visiting My Website!");
+});
+
+</script>
+
+</body>
+</html>
