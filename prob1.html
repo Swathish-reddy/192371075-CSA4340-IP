@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Transformation Demo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#d9f7ff,#eef8ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    color:#003366;
+    margin-bottom:15px;
+}
+
+p{
+    margin-bottom:35px;
+    color:#555;
+}
+
+.cards{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    width:220px;
+    height:230px;
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+    transition:all 0.6s ease;
+    cursor:pointer;
+}
+
+.icon{
+    font-size:60px;
+    transition:transform 0.6s;
+}
+
+.card h2{
+    margin-top:15px;
+    color:#004d80;
+}
+
+.card p{
+    margin-top:10px;
+    font-size:14px;
+}
+
+/* Card 1 */
+.zoom:hover{
+    transform:scale(1.12);
+    background:#d6f5d6;
+}
+
+.zoom:hover .icon{
+    transform:rotate(360deg);
+}
+
+/* Card 2 */
+.rotate:hover{
+    transform:rotate(-8deg);
+    background:#fff3cd;
+}
+
+.rotate:hover .icon{
+    transform:scale(1.3);
+}
+
+/* Card 3 */
+.slide:hover{
+    transform:translateY(-20px);
+    background:#dceeff;
+}
+
+.slide:hover .icon{
+    transform:translateX(20px);
+}
+
+/* Card 4 */
+.flip:hover{
+    transform:rotateY(180deg);
+    background:#ffe4ec;
+    color:white;
+}
+
+.flip:hover .icon,
+.flip:hover h2,
+.flip:hover p{
+    transform:rotateY(180deg);
+}
+
+.footer{
+    margin-top:35px;
+    color:#666;
+    font-size:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>✨ CSS Transition & Transformation Demo ✨</h1>
+
+<p>Move your mouse over each card to see different effects.</p>
+
+<div class="cards">
+
+<div class="card zoom">
+<div class="icon">🚀</div>
+<h2>Zoom</h2>
+<p>Uses <b>scale()</b> with a smooth transition.</p>
+</div>
+
+<div class="card rotate">
+<div class="icon">⚙️</div>
+<h2>Rotate</h2>
+<p>Uses <b>rotate()</b> transformation.</p>
+</div>
+
+<div class="card slide">
+<div class="icon">🎯</div>
+<h2>Slide</h2>
+<p>Uses <b>translateY()</b> to move upward.</p>
+</div>
+
+<div class="card flip">
+<div class="icon">💎</div>
+<h2>Flip</h2>
+<p>Uses <b>rotateY()</b> for a flip animation.</p>
+</div>
+
+</div>
+
+<div class="footer">
+CSS Transition makes the animation smooth, while CSS Transform changes the element's position, size, or rotation.
+</div>
+
+</div>
+
+</body>
+</html>
